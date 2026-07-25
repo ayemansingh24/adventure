@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+/* Using universal selector(*) with 0 margin and 0 padding is consider as a good practice.*/
+
+
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+    /* we can set the perspective to any value. Using perspective we activate 3-D work */
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    /* using transform-style we can preserve the 3-D effect in our website i.e jo bhi 3-D position, conditions set ki kisi ko bhi hatana nai hain.*/
+    
+    /* z-index: -1; */
+    /* z-index is used for overlaping ki konsi layer kis ke oopar aaney wali hain. */   
+}
+
+/* Immediate positioned ancestor for bg image and fg image is container div tag. */
+
+#bg, #fg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    /* it fit the image in container/ puri width cover kar legi image (aspect ratio maintain hota hain).
+     (Basicaly using object-fit property  can specify how an <image> or <video> should be resized to fit its container.) */
+}
+
+#bg{
+    transform: translateZ(-50px) scale(7);
+}
+
+#fg{
+    transform: translateZ(-15px) scale(3);
+}
+
+h1{
+    position: absolute;
+    top: 5rem;
+    left: 29%;
+    /* right: 20%; */
+    letter-spacing: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 7rem ;
+    color: white;
+    text-shadow: 0px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+section{
+    position: absolute;
+    top: 890px;
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0rem;
+    width: 100%;
+}
+
+.Bg1{
+    background-image: url(./sport-1.jpg);
+    /* In this property we add the path of image using url value, this is an anothe way of inserting the image with caption*/
+}
+.Bg2{
+    background-image: url(./sport-2.jpg);
+}
+.Bg3{
+    background-image: url(./sport-3.jpg);
+}
+
+#subhead{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.para{
+    font-size: 1.2rem;
+    padding: 0 5rem;
+    margin: 3rem 0;
+}
+
+.Bg{
+    position: relative;
+    /*position:relative ---- Because I want to stack the text over background-image */
+    width: 100%;
+    background-attachment: fixed;
+    /* It keeps the image  fixed at that position and we can scroll over it. */
+    height: 500px;
+    background-size: cover;
+    /* It kind a work similar to object-fit property means agar koi image jo hain wo jyada badee hain and main chahta hu iss tarah se scaling ki jaye ki wo image viewport ko cover kar payein according to height and width that i have spcified.  */
+
+    background-position: center;
+    /* This makes the image to get position at the center of the screen and cover all the part same like object-fit: cover. */
+}
+
+.desc{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    color: black;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+
+
+
+
